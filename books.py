@@ -63,7 +63,7 @@ async def delete_book(book_title:str):
             BOOKS.pop(i)
             break
 
-@app.get("/books/search_author")
+@app.get("/books/search_author/{author}")
 async def keep_author_by_query(author: str):
     books_to_return = []
     for book in BOOKS:
