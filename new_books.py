@@ -9,12 +9,12 @@ class Book:
     descriptoion: str
     rating: int
 
-def __init__(self, id, title, author, descriptoion, rating):
-    self.id = id
-    self.title = title
-    self.author = author
-    self.descriptoion = descriptoion
-    self.rating = rating
+    def __init__(self, id, title, author, descriptoion, rating):
+        self.id = id
+        self.title = title
+        self.author = author
+        self.descriptoion = descriptoion
+        self.rating = rating
 
 BOOKS = [
     Book(1, 'Computer Science Pro', 'codingwithroby', 'A very nice book!', 5),
@@ -27,6 +27,6 @@ BOOKS = [
 
 @app.get("/books")
 async def read_all_books():
-    return BOOKS
+    return [book.__dict__ for book in BOOKS]
 
 
