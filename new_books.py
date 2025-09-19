@@ -42,8 +42,10 @@ class Book: #classe Book define uma classe python, que é como um molde para cri
         self.rating = rating
 
 #Não entendi bem esse a parte do default
-#A classe Book sozinha nao valida nada, é necessario usar Bookrequest do pydantic para validar os dados antes de criar o objeto
-#Essa classe serve como modelo interno da aplicação, todos os livros criados via POST ou adc a lista BOOKS são ojetos dessa classe
+#A classe Book sozinha nao valida nada, é necessario usar Bookrequest do pydantic
+# para validar os dados antes de criar o objeto
+#Essa classe serve como modelo interno da aplicação, todos os livros criados via POST 
+#ou adc a lista BOOKS são ojetos dessa classe
 class BookRequest(BaseModel):
     id: Optional[int] = Field(description='ID is not needed on creat', default=None)
     title: str = Field(min_length=3)
