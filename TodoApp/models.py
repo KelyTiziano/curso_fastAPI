@@ -1,5 +1,6 @@
 from database import Base 
-from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy import Column, Integer, String, Boolean    
+from pydantic import BaseModel 
 
 class Todos(Base):
     __tablename__ = 'todos'
